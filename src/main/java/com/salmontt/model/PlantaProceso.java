@@ -16,6 +16,10 @@ public class PlantaProceso extends UnidadOperativa{
         this.processCapacity = processCapacity;
     }
 
+    @Override
+    public void mostrarInformacion() {
+        System.out.println("Planta de proceso de capacidad: " + processCapacity);
+    }
 
     @Override
     public String toString() {

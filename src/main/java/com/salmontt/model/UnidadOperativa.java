@@ -28,6 +28,10 @@ public class UnidadOperativa {
         this.commune = commune;
     }
 
+    public void mostrarInformacion(){
+        System.out.println("Mostrando Informacion:");
+    }
+
     @Override
     public String toString() {
         return "UnidadOperativa{" +
