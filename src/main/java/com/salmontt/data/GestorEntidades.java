@@ -1,18 +1,19 @@
 package com.salmontt.data;
 
-import com.salmontt.model.Registrable;
+import com.salmontt.model.common.Registrable;
+import com.salmontt.model.colaborador.Colaborador;
 import com.salmontt.model.colaborador.Externo;
 import com.salmontt.model.colaborador.Interno;
 import com.salmontt.model.colaborador.Proveedor;
-import com.salmontt.model.unidadesOperativas.CentroCultivo;
-import com.salmontt.model.unidadesOperativas.PlantaProceso;
-import com.salmontt.model.unidadesOperativas.UnidadOperativa;
+import com.salmontt.model.unidadOperativa.CentroCultivo;
+import com.salmontt.model.unidadOperativa.PlantaProceso;
+import com.salmontt.model.unidadOperativa.UnidadOperativa;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GestorEntidades {
-    private List<Registrable> registrables = new ArrayList<>();
+    private final List<Registrable> registrables = new ArrayList<>();
 
     public void addDefaultItems(){
             registrables.add(new Externo("Empresa Externa 1", "200", "20/01/2026", "001e"));
@@ -26,16 +27,28 @@ public class GestorEntidades {
         registrables.add(r);
     }
 
-    public void showAllInfo(){
+    public void startUp() {
         if (registrables.isEmpty()){
             addDefaultItems();
-        } else {
-            return;
         }
+    }
+
+    public String showAllUnidades(){
+        StringBuilder sb = new StringBuilder();
         for (Registrable r: registrables) {
             if (r instanceof UnidadOperativa){
-                r.mostrarResumen();
+                sb.append(r.mostrarResumen()).append("\n");
             }
         }
+        return sb.toString();
+    }
+    public String showAllColaboradores(){
+        StringBuilder sb = new StringBuilder();
+        for (Registrable r: registrables) {
+            if (r instanceof Colaborador){
+                sb.append(r.mostrarResumen()).append("\n");
+            }
+        }
+        return sb.toString();
     }
 }

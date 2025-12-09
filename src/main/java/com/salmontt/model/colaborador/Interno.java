@@ -1,11 +1,11 @@
 package com.salmontt.model.colaborador;
 
-import com.salmontt.model.Registrable;
+import com.salmontt.model.common.Registrable;
 
 public class Interno extends Colaborador implements Registrable {
-    private String fechaContrato;
-    private int sueldo;
-    private int numeroEquipo;
+    private final String fechaContrato;
+    private final int sueldo;
+    private final int numeroEquipo;
 
     public Interno(String name, String capacity, String expiration, String fechaContrato, int sueldo, int numeroEquipo) {
         super(name, capacity, expiration);
@@ -27,8 +27,8 @@ public class Interno extends Colaborador implements Registrable {
     }
 
     @Override
-    public void mostrarResumen() {
-        System.out.println("Colaborador Interno." + getName() +"Expira: "+  getExpiration() +
-                ". Contratado en: " + fechaContrato + " por: " + sueldo + " para el equipo: " + numeroEquipo);
+    public String mostrarResumen() {
+        return ("Colaborador Interno: " + getName() +". Expira: "+  getExpiration() +
+                ". Contratado en: " + fechaContrato + " por: $" + sueldo + " para el equipo: " + numeroEquipo);
     }
 }

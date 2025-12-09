@@ -1,10 +1,9 @@
 package com.salmontt.model.colaborador;
 
-import com.salmontt.model.Registrable;
+import com.salmontt.model.common.Registrable;
 
 public class Externo extends Colaborador implements Registrable {
-    private String numeroContrato;
-
+    private final String numeroContrato;
 
     public Externo(String name, String capacity, String expiration, String numeroContrato) {
         super(name, capacity, expiration);
@@ -15,12 +14,9 @@ public class Externo extends Colaborador implements Registrable {
         return numeroContrato;
     }
 
-    public void setNumeroContrato(String numeroContrato) {
-        this.numeroContrato = numeroContrato;
-    }
 
     @Override
-    public void mostrarResumen() {
-        System.out.println("Colaborador Externo." + getName() +"Expira: "+  getExpiration() + ". Numero de contrato" + numeroContrato);
+    public String mostrarResumen() {
+        return ("Colaborador Externo: " + getName() +". Expira: "+  getExpiration() + ". Numero de contrato " + numeroContrato);
     }
 }

@@ -1,9 +1,9 @@
-package com.salmontt.model.unidadesOperativas;
+package com.salmontt.model.unidadOperativa;
 
-import com.salmontt.model.Registrable;
+import com.salmontt.model.common.Registrable;
 
 public class CentroCultivo extends UnidadOperativa implements Registrable {
-    private String productionTons;
+    private final String productionTons;
 
     public CentroCultivo(String name, String commune, String productionTons) {
         super(name, commune);
@@ -12,10 +12,6 @@ public class CentroCultivo extends UnidadOperativa implements Registrable {
 
     public String getProductionTons() {
         return productionTons;
-    }
-
-    public void setProductionTons(String productionTons) {
-        this.productionTons = productionTons;
     }
 
     @Override
@@ -28,7 +24,7 @@ public class CentroCultivo extends UnidadOperativa implements Registrable {
     }
 
     @Override
-    public void mostrarResumen() {
-        System.out.println("Centro de cultivo " + getName() + " ubicada en la comuna: " + getCommune() + " con producción: " + productionTons);
+    public String mostrarResumen() {
+        return "Centro de cultivo " + getName() + " ubicada en la comuna: " + getCommune() + " con producción: " + productionTons;
     }
 }
