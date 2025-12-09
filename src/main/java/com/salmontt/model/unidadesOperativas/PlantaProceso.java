@@ -1,6 +1,8 @@
-package com.salmontt.model;
+package com.salmontt.model.unidadesOperativas;
 
-public class PlantaProceso extends UnidadOperativa{
+import com.salmontt.model.Registrable;
+
+public class PlantaProceso extends UnidadOperativa implements Registrable {
     private String processCapacity;
 
     public PlantaProceso(String name, String commune, String processCapacity) {
@@ -16,10 +18,6 @@ public class PlantaProceso extends UnidadOperativa{
         this.processCapacity = processCapacity;
     }
 
-    @Override
-    public void mostrarInformacion() {
-        System.out.println("Planta de proceso de capacidad: " + processCapacity);
-    }
 
     @Override
     public String toString() {
@@ -28,5 +26,10 @@ public class PlantaProceso extends UnidadOperativa{
                 "commune=" + getCommune() +
                 "productionTons='" + processCapacity + '\'' +
                 '}';
+    }
+
+    @Override
+    public void mostrarResumen() {
+        System.out.println("Planta de Proceso " + getName() + " ubicada en la comuna: " + getCommune() + " con capacidad de produccion: " + processCapacity);
     }
 }

@@ -1,6 +1,6 @@
-package com.salmontt.model;
+package com.salmontt.model.unidadesOperativas;
 
-public class UnidadOperativa {
+public abstract class UnidadOperativa {
     private String name;
     private String commune;
 
