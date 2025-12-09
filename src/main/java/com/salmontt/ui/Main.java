@@ -96,7 +96,7 @@ public class Main {
         var option = 0;
         while (option != 3) {
             option = JOptionPane.showOptionDialog(null,
-                    "Seleccione una opcion",
+                    "Seleccione una opción",
                     "Salmontt",
                     JOptionPane.YES_NO_OPTION,
                     JOptionPane.QUESTION_MESSAGE,
@@ -127,7 +127,7 @@ public class Main {
                     returnedValue = JOptionPane.showOptionDialog(
                             null,
                             formColaboradorInterno,
-                            "Agregando Colaborador Externo",
+                            "Agregando Colaborador Interno",
                             JOptionPane.OK_CANCEL_OPTION,
                             JOptionPane.QUESTION_MESSAGE,
                             null,
@@ -144,7 +144,7 @@ public class Main {
                     returnedValue = JOptionPane.showOptionDialog(
                             null,
                             formColaboradorProveedor,
-                            "Agregando Colaborador Externo",
+                            "Agregando Proveedor",
                             JOptionPane.OK_CANCEL_OPTION,
                             JOptionPane.QUESTION_MESSAGE,
                             null,
@@ -266,7 +266,7 @@ public class Main {
         var option = 0;
         while (option != 4){
             option = JOptionPane.showOptionDialog(null,
-                    "Seleccione una opcion",
+                    "Seleccione una opción",
                     "Salmontt",
                     JOptionPane.YES_NO_OPTION,
                     JOptionPane.QUESTION_MESSAGE,
