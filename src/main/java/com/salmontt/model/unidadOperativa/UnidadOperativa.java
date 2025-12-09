@@ -1,11 +1,8 @@
-package com.salmontt.model;
+package com.salmontt.model.unidadOperativa;
 
-public class UnidadOperativa {
-    private String name;
-    private String commune;
-
-    public UnidadOperativa() {
-    }
+public abstract class UnidadOperativa {
+    private final String name;
+    private final String commune;
 
     public UnidadOperativa(String name, String commune) {
         this.name = name;
@@ -16,20 +13,8 @@ public class UnidadOperativa {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getCommune() {
         return commune;
-    }
-
-    public void setCommune(String commune) {
-        this.commune = commune;
-    }
-
-    public void mostrarInformacion(){
-        System.out.println("Mostrando Informacion:");
     }
 
     @Override
